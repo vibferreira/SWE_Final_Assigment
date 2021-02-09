@@ -1,0 +1,2 @@
+module LastAssigment {
+}
