@@ -1,0 +1,20 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Folder> 
+<name>WMS Ground Overlay</name>
+<description>An overlay of the WMS Map in Google Earth Desktop for Tweets made on the 5th of November, 2012</description>
+<GroundOverlay>
+<name>Study Area Overlay:Boston</name>
+<description>Overlay of the Areas of Boston where the tweets were made</description>
+<Icon>
+<href>C:\Users\vi_lu\Desktop\Java_Eclipse\LastAssigment\data\image.png</href>
+</Icon>
+<color> B3FFFFFF </color><LatLonBox>
+<north>42.32</north>
+<south>42.42</south>
+<east>-71.13</east>
+<west>-71.03</west>
+</LatLonBox>
+</GroundOverlay>
+</Folder> 
+</kml>
