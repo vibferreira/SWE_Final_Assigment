@@ -5,16 +5,21 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class KMLConnection {
+  	 static String googleEarthExecPath;
+  	 static String kmlFilePath;
+  	 static String kmlString;
+  	 static String lon, lat, createdAt, tweets;
 
-	public static void main(String[] args) {
+
+	public static void kmlCon() {
 		
 			 //Setting the image, google earth and kml file path
 			 File imagePath = new File ("C:\\Users\\vi_lu\\Desktop\\Java_Eclipse\\LastAssigment\\data\\image.png");
-		   	 String googleEarthExecPath = "C:\\Program Files\\\\Google\\Google Earth Pro\\client\\googleearth.exe";
-		   	 String kmlFilePath = "C:\\Users\\vi_lu\\Desktop\\Java_Eclipse\\LastAssigment\\data\\wmsKML.kml";
+		   	 googleEarthExecPath = "C:\\Program Files\\\\Google\\Google Earth Pro\\client\\googleearth.exe";
+		   	 kmlFilePath = "C:\\Users\\vi_lu\\Desktop\\Java_Eclipse\\LastAssigment\\data\\wmsKML.kml";
 		   	 
 		   	 //Defines the KML structure using the image file created in the previous step and defines transparency of 70%
-		   	 String kmlString = "<?xml version= \"1.0\" encoding=\"UTF-8\"?>\n"
+		     kmlString = "<?xml version= \"1.0\" encoding=\"UTF-8\"?>\n"
 		   			 + "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n"
 		   			 + "<Folder> \n"
 		   			 +"<name>WMS Ground Overlay</name>\n"
@@ -27,35 +32,38 @@ public class KMLConnection {
 		   			 +"</Icon>\n"
 		   			 + "<color> B3FFFFFF </color>"
 		   			 +"<LatLonBox>\n"
-		   			 +"<north>42.32</north>\n"
-		   			 +"<south>42.42</south>\n"
-		   			 +"<east>-71.13</east>\n"
-		   			 +"<west>-71.03</west>\n"
+		   			 +"<north>39.07</north>\n"
+		   			 +"<south>45.03</south>\n"
+		   			 +"<east>-80.77</east>\n"
+		   			 +"<west>-72.55</west>\n"
 		   			 +"</LatLonBox>\n"
 		   			 +"</GroundOverlay>\n"
 		   			 +"</Folder> \n"
-		   			 +"</kml>";
+		   			 +"</kml>";		   	 	   	 
 		   	 
+		   	 //NewClass: KMLFileWriter
 		   	 //Writes the kml string into the kml file and opens the kml file in Google Earth
 		   	 try {
 		   	 FileWriter fileWriter = new FileWriter(kmlFilePath);
 		   	 fileWriter.write(kmlString);
 		   	 fileWriter.close();    
 		   	 
+		   	 
 		   	 System.out.println("Launching Google Earth");
 		   	 String params[] = new String[2];
 		   	 params[0]= googleEarthExecPath;
 		   	 params[1] = kmlFilePath;
-		   		 
-		   	 System.out.println("Displaying the KML Location");
+		   	
+		   	 System.out.println("Displaying the WMS");
 		   	 Runtime.getRuntime().exec(params);
-		   	 System.out.println("You should see the Location in Google Earth Pro now");
+		   	 System.out.println("You should see the WMS in Google Earth Pro now");
 		   	 } catch (IOException e) {
-		   		 System.out.println("Google Earth Pro or the KML file could not be opened");
+		   		 System.out.println("Google Earth Pro or the WMS file could not be opened");
 		   		 e.printStackTrace();
 		   	 }//catch
-		   	 
-		 }//main
+	
+	}//main	 
+		
 }//class
 
 
